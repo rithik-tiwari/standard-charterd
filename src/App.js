@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import axios from 'axios'
+import Home from './pages/home'
+export default function App() {
+  const [file, setFile] = useState()
+  const [description, setDescription] = useState("")
 
-function App() {
+  const submit = async event => {
+    event.preventDefault()
+    const formData = new FormData()
+  formData.append("image", file)
+  formData.append("description", description)
+
+  const result = await axios.post('/api/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+  console.log(result.data)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+        <Home/>
     </div>
-  );
+  )
 }
-
-export default App;
