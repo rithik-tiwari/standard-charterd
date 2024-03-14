@@ -4,7 +4,7 @@ import ChatMessage from './ChatMessage';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
-const ChatApp = ({current,setCurrentIndex,userName, setUserName, userAddress, setUserAadhar, userAadhar, setUserAddress, userDOB, setUserDOB, userEmployment, setUserEmployment, userIncome, setUserIncome}) => {
+const ChatApp = ({id,setId,current,setCurrentIndex,userName, setUserName, userAddress, setUserAadhar, userAadhar, setUserAddress, userDOB, setUserDOB, userEmployment, setUserEmployment, userIncome, setUserIncome}) => {
     const [inputText, setInputText] = useState('');
         
   const [messages, setMessages] = useState([
@@ -12,8 +12,23 @@ const ChatApp = ({current,setCurrentIndex,userName, setUserName, userAddress, se
     { id: 2, text: 'Hello! Please Enter Your Full Name.', sender: 'bot' }
   ]);
 
-  const handleSubmit = () => {
-
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    setId((prev)=>uuidv4())
+    const data = {
+        unique_id : id,
+        name :userName,
+        age : userDOB,
+        adharcard_number : userAadhar,
+        income_proof : userIncome,
+        dob : userDOB
+    }
+    try{
+    const res = await axios.post('',data);
+    console.log(res.data)
+    }catch(err){
+        console.log(err.message)
+    }
   }
 
   const handleMessageSubmit = (e) => {

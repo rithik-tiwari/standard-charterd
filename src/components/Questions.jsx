@@ -6,7 +6,8 @@ import Popup from 'reactjs-popup'
 import SignaturePad from 'react-signature-canvas';
 import ChatApp from './ChatApp'
 import axios from 'axios';
-
+import { v4 as uuidv4 } from 'uuid';
+import UserWebCam from './userWebCame';
 
 const Questions = () => {
   const [userName, setUserName] = useState('');
@@ -27,6 +28,18 @@ const Questions = () => {
     setCurrentIndex((prevIndex) => (prevIndex === divs.length - 1 ? 0 : prevIndex + 1));
   }
 
+  const handle_Submit = async(e) => {
+    e.preventDefault()
+    setId((prev)=>uuidv4())
+    try{
+    const res = await axios.post('',imageURL);
+    console.log(res.data)
+    }catch(err){
+        console.log(err.message)
+    }
+  }
+
+
   const divs = [
     <div id='div1' className='font-bold text-2xl flex flex-col justify-center items-center'>
       <h2>Let's begin with the KYC Process</h2>
@@ -38,12 +51,12 @@ const Questions = () => {
       </div>
     </div>,
     <div id='div5' className='font-semibold text-xl flex flex-col justify-center items-center gap-y-6 w-full'>
-        <ChatApp userName={userName} setUserName={setUserName} userAddress={userAddress} setUserAadhar={setUserAadhar} userAadhar={userAadhar} setUserAddress={setUserAddress} userDOB={userDOB} setUserDOB={setUserDOB} userEmployment={userEmployment} setUserEmployment={setUserEmployment} userIncome={userIncome} setUserIncome={setUserIncome} id={id} setId={setId}/>
+        <ChatApp userName={userName} setUserName={setUserName}  userAddress={userAddress} setUserAadhar={setUserAadhar} userAadhar={userAadhar} setUserAddress={setUserAddress} userDOB={userDOB} setUserDOB={setUserDOB} userEmployment={userEmployment} setUserEmployment={setUserEmployment} userIncome={userIncome} setUserIncome={setUserIncome} id={id} setId={setId}/>
     </div>,
     <div id='div2' className='font-bold text-2xl flex flex-col justify-center items-center'>
       <h2 className='m-4'>Capture an Image of yourself.</h2>
       <div className="App">
-          <CustomWebcam id={id}/>
+          <UserWebCam id={id}/>
       </div>
     </div>,
     <div id='div3' className='font-bold text-2xl flex flex-col justify-center items-center'>
@@ -75,6 +88,9 @@ const Questions = () => {
                <button className='m-2' onClick={close}>Close</button>
 
                </div>
+               <button onClick={handle_Submit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+                   Submit
+               </button>
             </>
           )}
         </Popup>

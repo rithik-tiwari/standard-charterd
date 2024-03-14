@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 
-const CustomWebcam = ({id,setId}) => {
+const UserWebCam = ({id,setId}) => {
     const webcamRef = useRef(null);
     const [imgSrc, setImgSrc] = useState(null);
   
@@ -57,4 +57,4 @@ const CustomWebcam = ({id,setId}) => {
   );
 };
 
-export default CustomWebcam;
+export default UserWebCam;
