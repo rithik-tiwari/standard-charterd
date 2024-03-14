@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import Mainpage from '../components/mainpage'
+import Questions from '../components/Questions'
 const Home = () => {
   return (
     <div>
         <Navbar/>
-        <Mainpage/>
+        <Questions/>
         <Footer/>
     </div>
   )
