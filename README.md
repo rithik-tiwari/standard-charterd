@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+## Online Interactive Chat KYC for Banking
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Online Interactive Chat KYC for Banking repository! This project aims to provide a seamless and interactive Know Your Customer (KYC) process for banking institutions. The KYC process is conducted through a chat interface, allowing users to provide necessary information and documents in a conversational manner.
 
-## Available Scripts
+## Features
+<img width="1264" alt="kyc_page" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/f3c4c381-458e-448f-9bc7-180bf5b2e6d9">
 
-In the project directory, you can run:
+- **Interactive Chat Interface:** Engage users in a conversational KYC process, guiding them through the required steps and gathering necessary information.
+- <img width="1125" alt="chat_kyc" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/03b9ff44-fcd0-4e99-b766-7d92e4aea51c">
+- **Image Capturing:** Enable users to capture images of themselves and their Aadhar card directly within the chat interface, simplifying the document submission process.
+- <img width="1080" alt="capture_image" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/b5af10df-30d4-4613-9378-2d200353669a">
 
-### `npm start`
+- **Aadhar Card Verification:** Implement Aadhar card verification to ensure the authenticity of provided identity documents.
+- **Signature Pad:** Integrate a signature pad for users to digitally sign documents, enhancing the authenticity and legality of the KYC process.
+- <img width="1066" alt="signature_pad" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/8c98877b-d431-480c-96db-3f60bb8c7051">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Multiple Language Support:** Offer support for multiple languages, allowing users to complete the KYC process in their preferred language.
+- <img width="1264" alt="kyc_page - Copy" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/f60f10ad-69a0-4674-a38b-10ab37ca84e1">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Secure Data Transmission:** Ensure the security and privacy of user data by employing encryption protocols during data transmission.
+- **User Authentication:** Implement user authentication mechanisms to verify the identity of users accessing the platform.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up the Online Interactive Chat KYC for Banking website, follow these steps:
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/your-username/online-kyc-chat.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   cd online-kyc-chat
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Configure environment variables:
 
-### `npm run eject`
+    Create a .env file in the root directory and define necessary environment variables such as API keys, database connection strings, etc.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the server:
+    ```bash
+     npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Access the website:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open a web browser and navigate to http://localhost:3000 to access the Online Interactive Chat KYC for Banking website.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Usage
+Users can access the Online Interactive Chat KYC for Banking website through a web browser. They will be guided through the KYC process via the chat interface, where they can provide necessary information, capture images, verify their Aadhar card, and digitally sign documents using the signature pad. Additionally, users can select their preferred language for the KYC process.
 
-## Learn More
+### Contributing
+Contributions to the Online Interactive Chat KYC for Banking project are welcome! If you have ideas for new features, bug fixes, or improvements, feel free to submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### License
+This project is licensed under the MIT License.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contact
+For questions or inquiries, please contact the project maintainer:
 
-### Code Splitting
+Name: Your Name
+Email: your-email@example.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
