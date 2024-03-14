@@ -30,11 +30,13 @@ const CustomWebcam = ({id,setId}) => {
     };
 
     const handleSubmit = async(e) => {
+        var button = document.getElementById("submit");
+        button.innerHTML = "Submitted"
         e.preventDefault()
-        setId((prev)=>uuidv4())
-        const data = {
+        // setId((prev)=>uuidv4())
+        // const data = {
             
-        }
+        // }
         try{
         const res = await axios.post('',imgSrc, {
             headers: {
@@ -61,7 +63,7 @@ const CustomWebcam = ({id,setId}) => {
           <button onClick={capture} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >{t("homepage7.heading")}</button>
         )}
       </div>
-      <button onClick={handleSubmit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+      <button id="submit" onClick={handleSubmit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       {t("homepage11.heading")}
       </button>
     </div>

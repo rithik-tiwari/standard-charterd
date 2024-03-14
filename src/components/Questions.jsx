@@ -41,8 +41,8 @@ const Questions = () => {
   },[])
 
   const handle_Submit = async(e) => {
+
     e.preventDefault()
-    setId((prev)=>uuidv4())
     try{
     const res = await axios.post('',imageURL);
     console.log(res.data)
