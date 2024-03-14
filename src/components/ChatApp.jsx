@@ -1,20 +1,21 @@
 // ChatApp.js
 import React, { useState } from 'react';
 import ChatMessage from './ChatMessage';
+import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
-const ChatApp = () => {
+const ChatApp = ({current,setCurrentIndex,userName, setUserName, userAddress, setUserAadhar, userAadhar, setUserAddress, userDOB, setUserDOB, userEmployment, setUserEmployment, userIncome, setUserIncome}) => {
+    const [inputText, setInputText] = useState('');
+        
   const [messages, setMessages] = useState([
     { id: 1, text: 'Hi there!', sender: 'user' },
     { id: 2, text: 'Hello! Please Enter Your Full Name.', sender: 'bot' }
   ]);
-  const [inputText, setInputText] = useState('');
-  const [userName, setUserName] = useState('');
-  const [userDOB,setUserDOB] = useState('');
-  const [userAddress, setUserAddress] = useState('');
-  const [userAadhar, setUserAadhar] = useState('');
-  const [userEmployment, setUserEmployment] = useState('');
-  const [userIncome, setUserIncome] = useState('');
-  
+
+  const handleSubmit = () => {
+
+  }
+
   const handleMessageSubmit = (e) => {
     e.preventDefault();
     if (inputText.trim() !== '') {
@@ -93,7 +94,7 @@ const ChatApp = () => {
           <ChatMessage key={message.id} message={message} />
         ))}
       </div>
-      <form onSubmit={handleMessageSubmit} className="flex p-4">
+      <form  className="flex p-4">
         <input
           type="text"
           className="flex-1 border rounded px-2 py-1 focus:outline-none"
@@ -101,8 +102,11 @@ const ChatApp = () => {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
-        <button type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+        <button onClick={handleMessageSubmit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
           Send
+        </button>
+        <button onClick={handleSubmit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+          Submit
         </button>
       </form>
     </div>

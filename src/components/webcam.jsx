@@ -2,7 +2,7 @@ import Webcam from "react-webcam";
 import { useRef, useState, useCallback } from "react"; // import useState
 
 
-const CustomWebcam = () => {
+const CustomWebcam = ({}) => {
     const webcamRef = useRef(null);
     const [imgSrc, setImgSrc] = useState(null);
   
@@ -17,7 +17,7 @@ const CustomWebcam = () => {
     };
 
   return (
-    <div className="container flex flex-col justify-center items-center">
+    <div className="container flex flex-col justify-center items-center gap-y-5">
       {imgSrc ? (
         <img src={imgSrc} alt="webcam" />
       ) : (
@@ -25,9 +25,9 @@ const CustomWebcam = () => {
       )}
       <div className="btn-container">
         {imgSrc ? (
-          <button onClick={retake}>Retake photo</button>
+          <button onClick={retake} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >Retake photo</button>
         ) : (
-          <button onClick={capture}>Capture photo</button>
+          <button onClick={capture} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >Capture photo</button>
         )}
       </div>
     </div>

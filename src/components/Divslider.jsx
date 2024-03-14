@@ -14,7 +14,7 @@ const DivSlider = ({ divs }) => {
   return (
     <div className="flex justify-center items-center flex-col ">
       
-      <div className="w-full border-gray-300  flex justify-center items-center h-full">
+      <div className="w-full border-gray-300  flex flex-col justify-center items-center h-full">
         {divs.map((div, index) => (
           <div
             key={index}
@@ -24,16 +24,18 @@ const DivSlider = ({ divs }) => {
           >
             {div}
           </div>
+          
         ))}
-        
-      </div>
-      <div className='flex'>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={prevDiv}>
-          Previous
-        </button>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={nextDiv}>
           Next
         </button>
+        
+      </div>
+      <div className='flex'>
+        {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={prevDiv}>
+          Previous
+        </button> */}
+        
       </div>
     </div>
   );
