@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DivSlider from './Divslider';
 import adhar_dummy from '../images/aadhaar_dummy.png';
 import CustomWebcam from './webcam'; // import it
@@ -8,8 +8,16 @@ import ChatApp from './ChatApp'
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import UserWebCam from './userWebCame';
+import { useTranslation } from 'react-i18next';
+
 
 const Questions = () => {
+
+  const handleChangeLanguage=(lang) => {
+    i18n.changeLanguage(lang);
+    };
+  const [t,i18n ] = useTranslation("global");
+    
   const [userName, setUserName] = useState('');
   const [userDOB,setUserDOB] = useState('');
   const [userAddress, setUserAddress] = useState('');
@@ -28,6 +36,10 @@ const Questions = () => {
     setCurrentIndex((prevIndex) => (prevIndex === divs.length - 1 ? 0 : prevIndex + 1));
   }
 
+  useEffect(()=>{
+    i18n.changeLanguage("hi")
+  },[])
+
   const handle_Submit = async(e) => {
     e.preventDefault()
     setId((prev)=>uuidv4())
@@ -42,9 +54,9 @@ const Questions = () => {
 
   const divs = [
     <div id='div1' className='font-bold text-2xl flex flex-col justify-center items-center'>
-      <h2>Let's begin with the KYC Process</h2>
+      <h2>{t("homepage.heading")}</h2>
       <div>&nbsp;</div>
-      <p className='text-lg text-gray-400'>keep the following documents handy before proceeding. </p>
+      <p className='text-lg text-gray-400'>{t("homepage.title")} </p>
       <div className='w-[401px] flex flex-col'>
          <img src={adhar_dummy} alt="" />
          <p className='justify-center items-center flex text-lg text-gray-400'>Aadhar Card</p>
@@ -54,23 +66,23 @@ const Questions = () => {
         <ChatApp userName={userName} setUserName={setUserName}  userAddress={userAddress} setUserAadhar={setUserAadhar} userAadhar={userAadhar} setUserAddress={setUserAddress} userDOB={userDOB} setUserDOB={setUserDOB} userEmployment={userEmployment} setUserEmployment={setUserEmployment} userIncome={userIncome} setUserIncome={setUserIncome} id={id} setId={setId}/>
     </div>,
     <div id='div2' className='font-bold text-2xl flex flex-col justify-center items-center'>
-      <h2 className='m-4'>Capture an Image of yourself.</h2>
+      <h2 className='m-4'>{t("homepage3.heading")}</h2>
       <div className="App">
           <UserWebCam id={id}/>
       </div>
     </div>,
     <div id='div3' className='font-bold text-2xl flex flex-col justify-center items-center'>
-      <h2 className='m-4'>Capture an Image of Aadhar.</h2>
+      <h2 className='m-4'>{t("homepage5.heading")}</h2>
       <div className="App">
           <CustomWebcam id={id}/>
       </div>
     </div>,
     <div id='div4' className='font-bold text-2xl flex flex-col justify-center items-center'>
-      <h2 className='m-4 text-3xl'>Give your Signature.</h2>
+      <h2 className='m-4 text-3xl'>{t("homepage4.heading")}</h2>
       <div className="App">
         <Popup 
           model
-          trigger={<button className='border border-2 border-blue-500 p-2 rounded-lg hover:border-black hover:text-blue-500'>Open Signature Pad</button>}
+          trigger={<button className='border border-2 border-blue-500 p-2 rounded-lg hover:border-black hover:text-blue-500'>{t("homepage6.heading")}</button>}
           closeOnDocumentClick={false}
         >
           {close => (
@@ -89,7 +101,7 @@ const Questions = () => {
 
                </div>
                <button onClick={handle_Submit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
-                   Submit
+               {t("homepage11.heading")}
                </button>
             </>
           )}
@@ -117,7 +129,11 @@ const Questions = () => {
 
   return (
     <div className="container mx-auto m-8 h-[100vh] mb-44 ">
-      <h1 className="text-3xl font-bold mb-4 justify-center items-center flex">KYC</h1>
+<h1 className="text-3xl font-bold mb-4 justify-between items-center flex">KYC 
+      <div>
+      <button className='px-4 mx-2 border border-slate-900 bg-blue-700 text-white text-sm' onClick={() => handleChangeLanguage("hi")}HI>Hindi</button>
+      <button className='px-4 mx-2 border border-slate-900 bg-blue-700 text-white text-sm' onClick={() => handleChangeLanguage("en")}EN>English</button>
+      </div></h1>
       <DivSlider divs={divs} />
       
     </div>

@@ -2,39 +2,39 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='flex flex-col bg-[#F7F7F7]'>
-    <div className=' sm:flex sm:fles-col flex-row items-start xl:justify-start justify-center  gap-32 mx-20  py-9 border-b border-slate-300'>
+    <div className='flex flex-col bg-[#2B2929]'>
+    <div className=' sm:flex sm:fles-col flex-row items-start xl:justify-start justify-center text-sm gap-32 mx-20  py-9 border-b border-slate-300 text-white'>
       <div className='flex flex-col items-start justify-center'>
-        <div className='pb-4'>Support</div>
-        <div>Help Center</div>
-        <div>Get help with a safety issue</div>
-        <div>AirCover</div>
-        <div>Anti-discrimination</div>
-        <div>Disability support</div>
-        <div>Cancellation options</div>
-        <div>Report neighbourhood concern</div>
+        
+        <div>ABOUT US</div>
+        <div>BANK WITH US</div>
+        <div>ATMS AND BRANCHES</div>
+        <div>GET HELP</div>
+        <div>FAQS</div>
+        <div>FORMS AND DOWNLOADS</div>
+        <div>LATEST FINANCIAL RESULTS</div>
       </div>
       <div className='flex flex-col items-start justify-center'>
-         <div className='pb-4'>Hosting</div>
-        <div>Airbnb your home</div>
-        <div>AirCover for Hosts</div>
-        <div>Hosting resources</div>
-        <div>Community forum</div>
-        <div>Hosting responsibly</div>
-        <div>Join a free Hosting class</div>        
+       
+        <div>GLOBAL RESEARCH</div>
+        <div>NEWS AND MEDIA</div>
+        <div>CAREERS</div>
+        <div>AWARDS AND ACHIEVEMENT</div>
+        <div>WORLDWIDE LOCATIONS</div>
+           
       </div>
       <div className='flex flex-col items-start justify-center'>
-        <div className='pb-4'>Airbnb</div>
-        <div>Newsroom</div>
-        <div>New features</div>
-        <div>Careers</div>
-        <div>Investors</div>
-        <div>Airbnb.org emergency stays</div>
+      
+        <div>FIGHTING FRAUD</div>
+        <div>SUSTAINABILITY</div>
+        <div>PRIVACY NOTICE</div>
+        <div>TERMS AND CONDITIONS</div>
+        <div>INTERACTION GUIDELINES</div>
       </div>
     </div>
-    <div className='hidden sm:flex items-start justify-between gap-32 mx-20  py-9'>
+    <div className='hidden sm:flex items-start justify-between gap-32 mx-20  py-9 text-white'>
     <div className='flex gap-3 items-start justify-center'>
-        <div>© 2024 Airbnb, Inc.</div>
+        <div>© 2024 Standard Chartered Bank</div>
         <div>Privacy</div>
         <div>Terms</div>
         <div>Sitemap</div>

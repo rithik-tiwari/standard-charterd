@@ -1,10 +1,17 @@
 import Webcam from "react-webcam";
-import { useRef, useState, useCallback } from "react"; // import useState
+import { useRef, useState, useCallback, useEffect } from "react"; // import useState
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
+
 
 
 const CustomWebcam = ({id,setId}) => {
+
+  const handleChangeLanguage=(lang) => {
+    i18n.changeLanguage(lang);
+    };
+  const [t,i18n ] = useTranslation("global");
     const webcamRef = useRef(null);
     const [imgSrc, setImgSrc] = useState(null);
   
@@ -13,6 +20,10 @@ const CustomWebcam = ({id,setId}) => {
       const imageSrc = webcamRef.current.getScreenshot();
       setImgSrc(imageSrc);
     }, [webcamRef]);
+
+    useEffect(()=>{
+      i18n.changeLanguage("hi")
+    },[])
 
     const retake = () => {
         setImgSrc(null);
@@ -45,13 +56,13 @@ const CustomWebcam = ({id,setId}) => {
       )}
       <div className="btn-container">
         {imgSrc ? (
-          <button onClick={retake} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >Retake photo</button>
+          <button onClick={retake} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >{t("homepage8.heading")}</button>
         ) : (
-          <button onClick={capture} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >Capture photo</button>
+          <button onClick={capture} className="p-2 border-2 border-black hover:border-blue-400 hover:text-blue-600 rounded-full" >{t("homepage7.heading")}</button>
         )}
       </div>
       <button onClick={handleSubmit} type="submit" className="ml-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
-          Submit
+      {t("homepage11.heading")}
       </button>
     </div>
   );

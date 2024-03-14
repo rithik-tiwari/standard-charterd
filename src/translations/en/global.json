@@ -1,0 +1,65 @@
+{
+    "homepage":
+        {
+            "heading":"Let's begin with the KYC Process",
+            "title" : "keep the following documents handy before proceeding."
+        },
+        "homepage2":
+        {
+            "heading":"Enter Your Aadhar card number below"
+            
+        },
+        "homepage3":{
+            "heading":"Capture an Image of yourself."
+            
+        },
+        "homepage4":{
+            "heading":"Give your Signature."
+            
+        },
+        "homepage5":{
+            "heading":"Capture an Image of Aadhar."
+            
+        },
+        "homepage6":{
+            "heading":"Open Signature Pad"
+            
+        },
+        "homepage7":{
+            "heading":"Capture photo"
+            
+        },
+        "homepage8":{
+            "heading":"Retake photo"
+            
+        },
+        "homepage9":{
+            "heading":"Previous"
+            
+        },
+        "homepage10":{
+            "heading":"Next"
+            
+        },
+        "homepage11":{
+            "heading":"Submit"
+            
+        },
+        "Chat": {
+            "question":"What is your name?",
+            "text1":"Nice to meet you",
+            "text2":"What is your Date of Birth? Enter in the format (DD/MM/YYYY)",
+            "text3":"Your DOB ( ${inputText} ) Has been noted.",
+            "text4":"What is your Address?",
+            "text6":"Thank you, Your address ",
+            "text7":"Please Tell your Aadhar Number ",
+            "text8":"Thank you, Your address ",
+            "text9":"Please Enter your Type of Employment ",
+            "text10":"Please Enter your Annual Income in Rs ",
+            "text11":"Thank you for your kind response",
+            "text12":"Thank you for your kind response",
+            "text13":"Please Procced For the Aadhar Verification"
+
+        }
+    
+}

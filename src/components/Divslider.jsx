@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
 
 const DivSlider = ({ divs }) => {
+
+  const handleChangeLanguage=(lang) => {
+    i18n.changeLanguage(lang);
+    };
+  const [t,i18n ] = useTranslation("global");
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextDiv = () => {
@@ -10,6 +18,10 @@ const DivSlider = ({ divs }) => {
   const prevDiv = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? divs.length - 1 : prevIndex - 1));
   };
+
+  useEffect(()=>{
+    i18n.changeLanguage("hi")
+  },[])
 
   return (
     <div className="flex justify-center items-center flex-col ">
@@ -26,15 +38,16 @@ const DivSlider = ({ divs }) => {
           </div>
           
         ))}
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={nextDiv}>
-          Next
-        </button>
+        
         
       </div>
       <div className='flex'>
-        {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={prevDiv}>
-          Previous
-        </button> */}
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={prevDiv}>
+        {t("homepage9.heading")}
+        </button>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded" onClick={nextDiv}>
+        {t("homepage10.heading")}
+        </button>
         
       </div>
     </div>
