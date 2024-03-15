@@ -2,6 +2,10 @@
 
 Welcome to the Online Interactive Chat KYC for Banking repository! This project aims to provide a seamless and interactive Know Your Customer (KYC) process for banking institutions. The KYC process is conducted through a chat interface, allowing users to provide necessary information and documents in a conversational manner.
 
+## Preview of the website (vedio) :
+
+
+
 ## Features
 <img width="1264" alt="kyc_page" src="https://github.com/rithik-tiwari/standard-charterd/assets/93036942/f3c4c381-458e-448f-9bc7-180bf5b2e6d9">
 
