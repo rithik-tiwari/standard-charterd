@@ -4,6 +4,7 @@ Welcome to the Online Interactive Chat KYC for Banking repository! This project 
 
 ## Preview of the website (vedio) :
 
+https://github.com/rithik-tiwari/standard-charterd/assets/93036942/ed9b58e6-d245-4d49-97de-938093a9e48c
 
 
 ## Features
